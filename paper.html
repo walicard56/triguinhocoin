@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TigrinhoCoin Whitepaper</title>
+    <style>
+        body {
+            font-family: __Inter_207ec3, __Inter_Fallback_207ec3, system-ui, arial;
+            overflow-x: hidden;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f9f9f9;
+        }
+        #sidebar {
+            width: 250px;
+            background: #ffffff;
+            color: #000000;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        #sidebar ul li {
+            padding: 5px;
+            margin: 5px;
+        }
+        #sidebar ul li a {
+            color: #5d5d5d; /* Cor padrão dos links */
+            text-decoration: none;
+            display: block;
+        }
+        #sidebar ul li a.active {
+            color: #3a71dc; /* Cor do link ativo */
+            font-weight: 800;
+        }
+        #sidebar ul li a.active:hover {
+            color: #648cdd; /* Cor do link ativo */
+            font-weight: 800;
+        }
+        #sidebar ul li:hover {
+            transition: 1ms;
+            border-radius: 5px;
+            background: #e6e6e6;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px;
+            width: 70%;
+            margin-left: 250px; /* Add margin to avoid overlap with sidebar */
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+    
+        #sidebar .head-inter img {
+            width: 80px;
+        }
+    
+        #sidebar .head-inter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h2 {
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="sidebar">
+        <div class="head-inter">
+            <img src="/img/logo.png" alt="logo">
+            <h2>TigrinhoCoin</h2>
+        </div>
+        <ul>
+            <li><a href="#" data-section="abstract">📖 abstract</a></li>
+            <li><a href="#" data-section="introduction">🚶‍♂️ Introduction</a></li>
+            <li><a href="#" data-section="motivation">🤼‍♂️ Motivation</a></li>
+            <li><a href="#" data-section="specifications">📈 Specifications</a></li>
+            <li><a href="#" data-section="use-cases">💱 Use Cases</a></li>
+            <li><a href="#" data-section="blockchain-integration">🔐 Blockchain Integration</a></li>
+            <li><a href="#" data-section="distribution">🏤 Distribution and Acquisition</a></li>
+            <li><a href="#" data-section="security">👮‍♂️ Security</a></li>
+            <li><a href="#" data-section="conclusion">✅ Conclusion</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="abstract" class="section">
+            <h2>Abstract</h2>
+            <p>TigrinhoCoin is a decentralized meme digital currency designed for in-game transactions and future integration with casinos. Operating on the Solana blockchain, it has a total supply of 1,000,000 units. TigrinhoCoin is accessible through various acquisition methods such as direct purchases, viewing ads and earning rewards by playing games. As a community-driven token, TigrinhoCoin aims to add value through engagement and participation on decentralized entertainment platforms.</p>
+        </div>
+
+        <div id="introduction" class="section">
+            <h2>Introduction</h2>
+            <p>The digital economy has been undergoing a rapid transformation, especially with the integration of blockchain technologies in gaming. TigrinhoCoin seeks to leverage this trend by providing a seamless, meme-inspired digital currency that enhances in-game experiences and offers the potential for future applications in decentralized casinos. Built on the Solana blockchain, which offers high transaction speeds and low fees, TigrinhoCoin offers a versatile, scalable, and fun medium of exchange for digital entertainment ecosystems.</p>
+        </div>
+
+        <div id="motivation" class="section">
+            <h2>Motivation</h2>
+            <ul>
+                <li><strong>Decentralization in Gaming:</strong> Centralized systems in gaming platforms restrict players' freedom, with in-game assets controlled by developers. Blockchain integration empowers players to own their in-game currencies and assets.</li>
+                <li><strong>Blockchain and Casinos:</strong> As decentralized casinos grow in popularity, there is an increasing need for a reliable cryptocurrency tailored for such ecosystems.</li>
+                <li><strong>Memetic Value:</strong> Inspired by meme culture, TigrinhoCoin taps into the viral nature of internet culture while providing actual utility within gaming platforms.</li>
+                <li><strong>Enhanced Engagement:</strong> Reward systems that incentivize players for participation and engagement, such as earning through gameplay and watching advertisements, are key to user growth.</li>
+            </ul>
+        </div>
+
+        <div id="specifications" class="section">
+            <h2>TigrinhoCoin Specifications</h2>
+            <ul>
+                <li><strong>Name:</strong> TigrinhoCoin (TGR)</li>
+                <li><strong>Supply:</strong> 1,000,000 TGR (fixed)</li>
+                <li><strong>Blockchain:</strong> Solana</li>
+                <li><strong>Decimals:</strong> 8 (allowing fractional transactions)</li>
+                <li><strong>Transaction Fee:</strong> Low fees, leveraging Solana's high throughput architecture.</li>
+            </ul>
+        </div>
+
+        <div id="use-cases" class="section">
+            <h2>Use Cases</h2>
+            <ul>
+                <li><strong>In-Game Currency:</strong> TigrinhoCoin will serve as the primary currency for in-game transactions such as purchasing items, skins, upgrades, and other digital assets.</li>
+                <li><strong>Earning Through Play:</strong> Players can earn TigrinhoCoin by achieving milestones, completing missions, or engaging in competitive activities.</li>
+                <li><strong>Watching Advertisements:</strong> Players can also earn TigrinhoCoin by viewing advertisements within supported games, incentivizing engagement without compromising user experience.</li>
+                <li><strong>Casino Integration:</strong> In future updates, TigrinhoCoin will be integrated into decentralized casino platforms, allowing users to participate in a wide array of games of chance using their tokens.</li>
+                <li><strong>Trading and Staking:</strong> Holders of TigrinhoCoin will be able to trade or stake their tokens within decentralized exchanges or DeFi platforms for additional rewards.</li>
+            </ul>
+        </div>
+
+        <div id="blockchain-integration" class="section">
+            <h2>Blockchain Integration: Solana</h2>
+            <p>The decision to use Solana as the underlying blockchain infrastructure is based on its high-performance capabilities, including:</p>
+            <ul>
+                <li><strong>Scalability:</strong> Solana can handle thousands of transactions per second (TPS) with low latency, making it ideal for high-traffic environments like gaming.</li>
+                <li><strong>Low Transaction Costs:</strong> Transaction fees on Solana are minimal compared to other blockchains, allowing for frequent in-game transactions without prohibitive costs.</li>
+                <li><strong>Decentralization:</strong> Solana's decentralized architecture ensures that TigrinhoCoin transactions remain secure, transparent, and immutable.</li>
+                <li><strong>Smart Contract Compatibility:</strong> Solana supports smart contracts, allowing TigrinhoCoin to be seamlessly integrated into gaming ecosystems and future casino platforms through custom protocols.</li>
+            </ul>
+        </div>
+
+        <div id="distribution" class="section">
+            <h2>Distribution and Acquisition</h2>
+            <h3>Initial Distribution</h3>
+            <ul>
+                <li><strong>Token Sale:</strong> A portion of the 1,000,000 TigrinhoCoins will be available for purchase during an initial coin offering (ICO), with early investors benefiting from discounted prices.</li>
+                <li><strong>Gaming Platforms:</strong> The primary way users will obtain TigrinhoCoin is by playing partnered games. These games will offer TigrinhoCoin as rewards for completing certain in-game tasks or levels.</li>
+                <li><strong>Ad Engagement:</strong> Players can also earn TigrinhoCoin by viewing advertisements within supported games, incentivizing engagement without compromising user experience.</li>
+            </ul>
+
+            <h3>Future Developments</h3>
+            <ul>
+                <li><strong>Casino Partnerships:</strong> TigrinhoCoin will be integrated into decentralized casinos, where it can be used for betting and participating in games of chance.</li>
+                <li><strong>Marketplace:</strong> Players will be able to trade TigrinhoCoin for digital assets or fiat currency on decentralized exchanges and liquidity pools on the Solana blockchain.</li>
+                <li><strong>Staking and Governance:</strong> A staking system may be introduced, allowing holders to earn rewards while participating in governance, such as voting on future development directions.</li>
+            </ul>
+        </div>
+
+        <div id="security" class="section">
+            <h2>Security</h2>
+            <p>TigrinhoCoin's deployment on the Solana blockchain provides a high level of security, leveraging:</p>
+            <ul>
+                <li><strong>Decentralized Network:</strong> Solana's decentralized node structure ensures that there is no single point of failure, making TigrinhoCoin resistant to censorship or tampering.</li>
+                <li><strong>Immutable Ledger:</strong> All transactions are recorded on an immutable blockchain, ensuring transparency and trust in the TigrinhoCoin ecosystem.</li>
+                <li><strong>Smart Contract Security:</strong> Audited smart contracts will be used for gaming rewards and casino integration, providing further protection against exploits.</li>
+            </ul>
+        </div>
+
+        <div id="conclusion" class="section">
+            <h2>Conclusion</h2>
+            <p>TigrinhoCoin introduces a meme-inspired digital currency with real-world utility in the gaming and casino sectors. By leveraging the power of the Solana blockchain, TigrinhoCoin provides a secure, scalable, and decentralized medium of exchange that enhances user engagement and offers innovative opportunities for growth in the decentralized entertainment landscape.</p>
+            <p>In the future, TigrinhoCoin aims to expand its ecosystem to include more games, broader casino partnerships, and integration with DeFi platforms, providing value not just as a meme token, but as a functional currency for digital economies.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('#sidebar ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                // Hide all sections
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+    
+                // Show the clicked section
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+    
+                // Update active link style
+                document.querySelectorAll('#sidebar ul li a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    
+        // Set the first section as active on page load
+        document.querySelector('#sidebar ul li a').click();
+    </script>
+    
+</body>
+</html>
