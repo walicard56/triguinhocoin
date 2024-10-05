@@ -749,6 +749,8 @@ color{
   .how-to-steps {
     grid-template-columns: 100%;
   }
+  .banner-col1 img{
+    max-width: 100px;
   }
   
   @media (max-width:520px) {
@@ -778,4 +780,4 @@ color{
 
 
 
-  
+}
