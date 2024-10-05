@@ -55,6 +55,9 @@ color{
     font-size: 16px;
     line-height: 1.4;
   }
+  .copy-logos img {
+    max-width: 150px;
+  }
   .cat-btn {
     position: relative;
     margin: auto;
@@ -465,6 +468,9 @@ color{
   }
   .banner-col1 .font-h3 {
     margin: 20px 0;
+  }
+  .banner-col1 img{
+    max-width: 150px;
   }
   a.trade-btn-item {
     background-position: calc(100% - 10px) 50%;
