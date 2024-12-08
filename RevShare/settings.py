@@ -25,6 +25,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Diretórios adicionais para arquivos estáticos durante o desenvolvimento
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+# Usando ManifestStaticFilesStorage em produção
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
