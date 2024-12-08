@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tiger reward{% endblock %}</title>
+    {% load static %}
+    {% load socialaccount %}
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_home.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_login.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_dash.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_saque.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_perfil.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <p>Tiger</p>
+            </div>
+            <div class="auth-buttons">
+                {% if user.is_authenticated %}
+                    <button id="redirect-div_saque" class="auth-header-Money" >
+                        <svg height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                            <polygon style="fill:#C6D9B0;" points="64,128 64,179.2 448,179.2 448,332.8 499.2,332.8 499.2,128 "/>
+                            <path style="fill:#FEDEA1;" d="M230.4,332.8c-28.237,0-51.2-22.963-51.2-51.2s22.963-51.2,51.2-51.2s51.2,22.963,51.2,51.2
+                                S258.637,332.8,230.4,332.8z"/>
+                            <path style="fill:#A0BF7C;" d="M12.8,384V179.2H448V384H12.8z M230.4,230.4c-28.237,0-51.2,22.963-51.2,51.2s22.963,51.2,51.2,51.2
+                                s51.2-22.963,51.2-51.2S258.637,230.4,230.4,230.4z"/>
+                            <g>
+                                <path style="fill:#573A32;" d="M230.4,217.6c-35.345,0-64,28.655-64,64s28.655,64,64,64s64-28.655,64-64S265.745,217.6,230.4,217.6
+                                    z M230.4,320c-21.171,0-38.4-17.229-38.4-38.4c0-21.171,17.229-38.4,38.4-38.4s38.4,17.229,38.4,38.4
+                                    C268.8,302.771,251.571,320,230.4,320z"/>
+                                <circle style="fill:#573A32;" cx="358.4" cy="281.6" r="25.6"/>
+                                <circle style="fill:#573A32;" cx="102.4" cy="281.6" r="25.6"/>
+                                <path style="fill:#573A32;" d="M51.2,115.2v51.2H0v230.4h460.8v-51.2H512V115.2H51.2z M435.2,371.2H25.6V192h409.6V371.2z
+                                    M486.4,320h-25.6V166.4h-384v-25.6h409.6V320z"/>
+                            </g>
+                        </svg>
+                        <span class="balance">$ {{ saldo.saldo_atual }}</span>
+
+                    </button>
+                    <button id="redirect-div_perfil" class="auth-header-user">
+                        <img src="" alt="">
+                        <span class="username">{{ user.username }}</span>
+                    </button>
+                    <a href="{% url 'logout' %}" class="logout-btn">
+                        <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 471.2 471.2" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M227.619,444.2h-122.9c-33.4,0-60.5-27.2-60.5-60.5V87.5c0-33.4,27.2-60.5,60.5-60.5h124.9c7.5,0,13.5-6,13.5-13.5
+                                        s-6-13.5-13.5-13.5h-124.9c-48.3,0-87.5,39.3-87.5,87.5v296.2c0,48.3,39.3,87.5,87.5,87.5h122.9c7.5,0,13.5-6,13.5-13.5
+                                        S235.019,444.2,227.619,444.2z"/>
+                                    <path d="M450.019,226.1l-85.8-85.8c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1l62.8,62.8h-273.9c-7.5,0-13.5,6-13.5,13.5
+                                        s6,13.5,13.5,13.5h273.9l-62.8,62.8c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l85.8-85.8
+                                        C455.319,239.9,455.319,231.3,450.019,226.1z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                {% else %}
+                    <button class="login-btn" id="show-login">Log in</button>
+                    <button class="signup-btn" id="show-signup">Sign up</button>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <div class="containerinIup">
+        <div class="In-box" id="login-form" style="display: none;">
+            <div class="In-box-inner">
+                <h2>Sign Up for Free</h2>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% for field in login_form %}
+                        <div class="In-field">
+                            {{ field.errors }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <button class="In-button" type="submit" name="login">Start earn money</button>
+                </form>
+                {% if messages %}
+                    <div class="In-messages">
+                        {% for message in messages %}
+                            <div class="In-message {% if message.tags %} {{ message.tags }}{% endif %}" style="color: rgb(255, 103, 103);">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <a class="In-forgot-password" href="">Esqueceu a sua senha?</a>
+                <a class="In-show-register" href="#" id="show-register">Criar uma conta</a>
+    
+                <div class="In-social">
+                    <button class="In-metamask" id="loginButton"><img src="{% static 'Tigrinho/img/meta.png' %}" alt="MetaMask"> Login with MetaMask</button>
+                    <button class="In-google" href="{% provider_login_url 'google' %}"><img src="{% static 'Tigrinho/img/googlee.png' %}" alt="Google">Login with Google</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="Up-box" id="register-form" style="display: none;">
+            <div class="Up-box-inner">
+                <h2>Informe seus dados</h2>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% for field in register_form %}
+                        <div class="Up-field">
+                            {{ field.errors }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <button class="Up-button" type="submit" name="register">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- Site footer -->
+    <footer class="main_footer container">
+        <div class="main_footer_copy">
+            <p class="m-b-footer"> Tigrinho.online - 2024, todos os direitos reservados.</p> 
+        </div>
+    </footer>
+    <script src="{% static 'Tigrinho/js/login_script.js' %}"></script>
+    <script>
+        document.getElementById("redirect-div_saque").onclick = function() {
+            window.location.href = "{% url 'saque' %}";
+        };
+
+        document.getElementById("redirect-div_perfil").onclick = function() {
+            window.location.href = "{% url 'perfil' %}";
+        };
+    </script>
+</body>
+</html>
