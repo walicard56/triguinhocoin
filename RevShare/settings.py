@@ -16,9 +16,15 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Configuração de arquivos estáticos
+STATIC_URL = '/static/'
 
-STATIC_URL = '/static/Tigrinho'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# Diretório para armazenar os arquivos estáticos coletados
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Diretórios adicionais para arquivos estáticos durante o desenvolvimento
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
