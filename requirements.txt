@@ -31,6 +31,7 @@ eth_abi==5.1.0
 executing==2.1.0
 fastjsonschema==2.21.1
 frozenlist==1.5.0
+gunicorn==23.0.0
 hexbytes==1.2.1
 idna==3.10
 ipython==8.12.3
@@ -86,6 +87,12 @@ types-requests==2.32.0.20241016
 typing_extensions==4.12.2
 urllib3==2.2.3
 wcwidth==0.2.13
+web3==7.5.0
+webencodings==0.5.1
+websockets==14.1
+yarg==0.1.9
+yarl==1.17.1
+
 web3==7.5.0
 webencodings==0.5.1
 websockets==14.1
