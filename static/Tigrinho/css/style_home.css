@@ -116,7 +116,7 @@
 }
 
 .pay h1, p{
-    color: gray;
+    color: white;
 }
 
 .partners {
@@ -168,7 +168,7 @@
 }
 
 .googleplay {
-    background-color: #2b3747;
+    background: linear-gradient(320deg, rgb(36, 36, 39) 0%, rgb(60, 61, 71) 100%);
 }
 
 
