@@ -1,9 +1,0 @@
-{% extends 'Tigrinho/base.html' %}
-{% block title %}Home{% endblock %}
-{% block content %}
-{% load static %}
-  <h1>Saldo</h1>
-  <p>Seu saldo atual é: R$ {{ saldo.saldo_atual }}</p>
-  <a href="{% url 'deposito' %}">Fazer Depósito</a>
-  <a href="{% url 'saque' %}">Solicitar Saque</a>
-{% endblock %}
