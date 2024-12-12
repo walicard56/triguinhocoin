@@ -1,0 +1,12 @@
+{% extends 'Tigrinho/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load static %}
+
+<h1>Fazer Depósito</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Depositar</button>
+  </form>
+{% endblock %}
