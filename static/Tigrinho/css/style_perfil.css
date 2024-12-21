@@ -1,0 +1,136 @@
+.profile-container {
+    background-color: #171c29;
+    padding: 20px;
+    height: 500px;
+}
+
+.profile-DIT {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-header {
+    background: #5454ff;
+    border-radius: 10px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+}
+
+.profile-pic img {
+    border-radius: 50%;
+    width: 120px;
+    object-fit: cover;
+}
+
+.profile-info {
+    margin-left: 20px;
+}
+
+.profile-info h1 {
+    margin: 0;
+    color: white;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: #888;
+}
+
+.level {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.level .progress-bar {
+    background-color: #2c2f3a;
+    border-radius: 5px;
+    width: 150px;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.level .progress {
+    background-color: #00ff00;
+    width: 0;
+    height: 100%;
+}
+
+.profile-stats {
+    background: #5454ff;
+    border-radius: 10px;
+    height: 126px;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background-color: #20263a;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.stat:first-child, .stat:last-child {
+    margin-left: 10;
+    margin-right: 10;
+}
+
+.stat .icon {
+    background-color: #2c2f3a;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px auto;
+}
+
+.wallet-icon { background-image: url('path-to-wallet-icon.png'); }
+.completed-icon { background-image: url('path-to-completed-icon.png'); }
+.referral-icon { background-image: url('path-to-referral-icon.png'); }
+.earnings-icon { background-image: url('path-to-earnings-icon.png'); }
+
+.stat-info .value {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.stat-info .label {
+    color: #888;
+}
+
+.profile-footer {
+    display: flex
+;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profile-footer .btn {
+    background-color: #2c2f3a;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.profile-footer .btn:hover {
+    background-color: #383c50;
+}
+
+.profile-footer p {
+    color: #888;
+    font-size: 0.8em;
+}
