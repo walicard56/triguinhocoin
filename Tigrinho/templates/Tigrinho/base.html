@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tiger reward{% endblock %}</title>
+    {% load static %}
+    {% load socialaccount %}
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_home.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_login.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_dash.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_saque.css' %}">
+    <link rel="stylesheet" href="{% static 'Tigrinho/css/style_perfil.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'Tigrinho/img/logo_remo.png' %}" alt="">
+                <p>Tiger</p>
+            </div>
+            <div class="auth-buttons">
+                {% if user.is_authenticated %}
+                    <div class="dropdown">
+                        <button class="dropbtn"><img src="{% static 'Tigrinho/img/logo_remo.png' %}" alt=""><span class="username">{{ user.username }}</span></button>
+                        <div class="dropdown-content">
+                        <a href="{% url 'saque' %}">Saque</a>
+
+                        <a href="{% url 'perfil' %}">Perfil</a>
+
+                        <a href="{% url 'dashboard' %}">dashboard</a>
+
+                        <a href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <button class="login-btn" id="show-login">Log in</button>
+                    <button class="signup-btn" id="show-signup">Sign up</button>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <div class="containerinIup" id="containerinIup">
+        <div class="In-box" id="login-form" style="display: none;">
+            <div class="In-box-inner">
+                <h2>Sign Up for Free</h2>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% for field in login_form %}
+                        <div class="In-field">
+                            {{ field.errors }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <button class="In-button" type="submit" name="login">Start earn money</button>
+                </form>
+                {% if messages %}
+                    <div class="In-messages">
+                        {% for message in messages %}
+                            <div class="In-message {% if message.tags %} {{ message.tags }}{% endif %}" style="color: rgb(255, 103, 103);">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <a class="In-forgot-password" href="">Esqueceu a sua senha?</a>
+                <br>
+                <a class="In-show-register" href="#" id="show-register">Criar uma conta</a>
+    
+                <div class="In-social">
+                    <button class="In-metamask" id="loginButton"><img src="{% static 'Tigrinho/img/meta.png' %}" alt="MetaMask"> Login with MetaMask</button>
+                    <button class="In-google" href="{% provider_login_url 'google' %}"><img src="{% static 'Tigrinho/img/googlee.png' %}" alt="Google">Login with Google</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="Up-box" id="register-form" style="display: none;">
+            <div class="Up-box-inner">
+                <h2>Informe seus dados</h2>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% for field in register_form %}
+                        <div class="Up-field">
+                            {{ field.errors }}
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                    <button class="Up-button" type="submit" name="register">Sign Up</button>
+                    <p style="text-align: center;">ou</p>
+                    <div class="In-social">
+                        <button class="In-metamask" id="loginButton"><img src="{% static 'Tigrinho/img/meta.png' %}" alt="MetaMask"> Login with MetaMask</button>
+                        <button class="In-google" href="{% provider_login_url 'google' %}"><img src="{% static 'Tigrinho/img/googlee.png' %}" alt="Google">Login with Google</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- Site footer -->
+    <footer class="main_footer container">
+        <div class="main_footer_copy">
+            <p class="m-b-footer"> Tigrinhocoin.online, todos os direitos reservados.</p> 
+        </div>
+    </footer>
+    <script src="{% static 'Tigrinho/js/login_script.js' %}"></script>
+    <script>
+        document.getElementById("redirect-div_saque").onclick = function() {
+            window.location.href = "{% url 'saque' %}";
+        };
+
+        document.getElementById("redirect-div_perfil").onclick = function() {
+            window.location.href = "{% url 'perfil' %}";
+        };
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('register-form');
+            const showLoginBtn = document.getElementById('show-login');
+            const showSignupBtn = document.getElementById('show-signup');
+            const showcontainer = document.getElementById('containerinIup') 
+
+
+            if (showLoginBtn) {
+                showLoginBtn.addEventListener('click', function() {
+                    loginForm.style.display = 'block';
+                    signupForm.style.display = 'none';
+                });
+            }
+
+            if (showSignupBtn) {
+                showSignupBtn.addEventListener('click', function() {
+                    signupForm.style.display = 'block';
+                    loginForm.style.display = 'none';
+                });
+            }
+
+            const showRegisterLink = document.getElementById('show-register');
+            if (showRegisterLink) {
+                showRegisterLink.addEventListener('click', function() {
+                    signupForm.style.display = 'block';
+                    loginForm.style.display = 'none';
+                });
+            }
+
+            const showLoginLink = document.getElementById('show-login');
+            if (showLoginLink) {
+                showLoginLink.addEventListener('click', function() {
+                    loginForm.style.display = 'block';
+                    signupForm.style.display = 'none';
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

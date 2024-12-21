@@ -1,0 +1,36 @@
+{% extends 'Tigrinho/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="profile-container">
+    <div class="profile-DIT">
+        <div class="profile-header">
+            <div class="profile-pic">
+                <img src="{% static 'Tigrinho/img/logo_remo.png' %}" alt="">
+            </div>
+            <div class="profile-info">
+                <h1>{{ user.username }}</h1>
+                <div class="level">
+                    <span>Level</span>
+                    <span class="level-value">0</span>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <span>1000 coins to level up</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-footer">
+        <button class="btn">Earnings in progress</button>
+        <button class="btn">Earnings</button>
+        <button class="btn">Withdrawals</button>
+        <p>Only featured offers are shown here. Your other offers can be found directly in the offer wall popups.</p>
+        <div class="profile-footer-menu">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
